@@ -1,0 +1,19 @@
+require 'rubygems'
+
+spec = Gem::Specification.new do |s|
+  s.name = "awesome_lib"
+  s.version = "0.0.1"
+  s.platform = Gem::Platform::RUBY
+  s.summary = "Summary"
+  s.description = s.summary
+  s.author = "Me"
+  s.email = "joe@example.org"
+
+  s.require_path = 'lib'
+  s.files = Dir.glob("lib/**/*")
+end
+
+require 'rake/gempackagetask'
+Rake::GemPackageTask.new(spec) do |pkg|
+  pkg.gem_spec = spec
+end
